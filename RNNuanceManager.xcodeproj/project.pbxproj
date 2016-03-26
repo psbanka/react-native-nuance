@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		092DF30A1CA715FB0019BA1A /* RNNuanceManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 092DF3091CA715FB0019BA1A /* RNNuanceManager.h */; };
 		092DF30C1CA715FB0019BA1A /* RNNuanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 092DF30B1CA715FB0019BA1A /* RNNuanceManager.m */; };
+		092DF3141CA718110019BA1A /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092DF3131CA718110019BA1A /* SpeechKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		092DF3061CA715FA0019BA1A /* libRNNuanceManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNNuanceManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		092DF3091CA715FB0019BA1A /* RNNuanceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNuanceManager.h; sourceTree = "<group>"; };
 		092DF30B1CA715FB0019BA1A /* RNNuanceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNuanceManager.m; sourceTree = "<group>"; };
+		092DF3131CA718110019BA1A /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092DF3141CA718110019BA1A /* SpeechKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 		092DF2FD1CA715FA0019BA1A = {
 			isa = PBXGroup;
 			children = (
+				092DF3121CA718030019BA1A /* Frameworks */,
 				092DF3081CA715FB0019BA1A /* RNNuanceManager */,
 				092DF3071CA715FA0019BA1A /* Products */,
 			);
@@ -64,6 +68,14 @@
 				092DF30B1CA715FB0019BA1A /* RNNuanceManager.m */,
 			);
 			path = RNNuanceManager;
+			sourceTree = "<group>";
+		};
+		092DF3121CA718030019BA1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				092DF3131CA718110019BA1A /* SpeechKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +224,19 @@
 		092DF3101CA715FB0019BA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React/**",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -221,7 +245,19 @@
 		092DF3111CA715FB0019BA1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React/**",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
